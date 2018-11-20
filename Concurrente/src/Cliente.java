@@ -20,11 +20,16 @@ public class Cliente {
 			
 			// Acciones
 			salida.writeUTF("Prueba 1");
-			//cadena = entrada.readUTF();
 			salida.writeUTF("Prueba 2");
 			salida.writeUTF("Prueba 3");
-			salida.writeUTF("adios");
-			
+			salida.writeUTF("Bye");
+			while (true) {
+				String respuesta = entrada.readUTF();
+				System.out.println(respuesta);
+				if (respuesta.equals("Bye")){
+					break;
+				}
+			}
 			// Cerrar los canales de entrada, salida y el socket cliente
 			salida.close();
 			entrada.close();
