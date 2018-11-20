@@ -27,7 +27,7 @@ public class Cliente {
 				salida.writeUTF(valor);
 				String respuesta=entrada.readUTF();
 				System.out.println(respuesta);
-				if (valor.equals("salir")) {
+				if (valor.equals("adios")) {
 					break;
 				}
 			}
