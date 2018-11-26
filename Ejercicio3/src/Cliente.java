@@ -22,7 +22,7 @@ class Persona extends Thread {
             dos = new DataOutputStream(sk.getOutputStream());
             dis = new DataInputStream(sk.getInputStream());
             dos.writeUTF("Hola");
-            System.out.println("Cliente[" + this.id + "] :"+"Hola");
+            System.out.println("Cliente[" + this.id + "] :"+ "Hola");
             dos.writeUTF("Que tal?");
             System.out.println("Cliente[" + this.id + "] :" + "Que tal?");
             dos.writeUTF("Bye");
