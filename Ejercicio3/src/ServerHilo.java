@@ -16,7 +16,7 @@ public class ServerHilo extends Thread{
             dis = new DataInputStream(s.getInputStream());
             dos = new DataOutputStream(s.getOutputStream());
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
     public void desconexion(){
@@ -35,15 +35,16 @@ public class ServerHilo extends Thread{
         while (true){
             cadena = dis.readUTF();
             if (cadena.equals("Bye")) {
-                dos.writeUTF("Bye");
+                dos.writeUTF("Servidor[" + this.id + "] :"+"Bye");
                 desconexion();
             } else {
-                dos.writeUTF(cadena);
+                dos.writeUTF("Servidor[" + this.id + "] :"+cadena);
                 System.out.println(cadena + "[" + this.id + "]");
             }
         }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
+        desconexion();
     }
 }

@@ -21,12 +21,17 @@ class Persona extends Thread {
             sk = new Socket("localhost", 9998);
             dos = new DataOutputStream(sk.getOutputStream());
             dis = new DataInputStream(sk.getInputStream());
-            dos.writeUTF("Cliente: ");
+            dos.writeUTF("Hola");
+            System.out.println("Cliente[" + this.id + "] :"+"Hola");
             dos.writeUTF("Que tal?");
+            System.out.println("Cliente[" + this.id + "] :" + "Que tal?");
             dos.writeUTF("Bye");
+            System.out.println("Cliente[" + this.id + "] :" + "Bye");
+
             while (true) {
                 String contesta = dis.readUTF();
                 if (contesta.equals("Bye")){
+                    System.out.println(contesta);
                     dis.close();
                     dos.close();
                     sk.close();
@@ -35,7 +40,7 @@ class Persona extends Thread {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 }
