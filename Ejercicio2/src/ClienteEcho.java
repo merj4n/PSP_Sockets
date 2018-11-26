@@ -37,7 +37,6 @@ public class ClienteEcho {
             cliente.close();
 
         } catch (IOException e) {
-            System.out.println(e);
         }
     }
 }

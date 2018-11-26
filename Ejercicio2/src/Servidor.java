@@ -34,9 +34,6 @@ public class Servidor {
             // Acciones a realizar por el servidor
             while (true) {
                 cadena = entradaEcho.readUTF();
-                cadena2 = entradaHora.readUTF();
-                System.out.println(cadena);
-
                 if (cadena.equals("Bye")) {
                         salidaEcho.writeUTF("Adios");
                         salidaEcho.close();
@@ -45,8 +42,11 @@ public class Servidor {
                         break;
                     } else {
                         salidaEcho.writeUTF(cadena);
-                }
-                if (cadena2.equals("Bye")) {
+                    }
+            }
+            while (true) {
+                    cadena2 = entradaHora.readUTF();
+                    if (cadena2.equals("Bye")) {
                         salidaHora.writeUTF("Adios");
                         salidaHora.close();
                         entradaHora.close();
@@ -55,9 +55,8 @@ public class Servidor {
                     } else {
                         salidaHora.writeUTF(FechaHora());
                     }
-                }
+            }
         } catch (IOException e) {
-            System.out.println(e);
         }
     }
     public static String FechaHora() {
