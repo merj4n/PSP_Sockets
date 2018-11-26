@@ -23,13 +23,13 @@ public class ServerHiloTime extends Thread{
         }
     }
     public void desconexion(){
-        try {
-            dis.close();
-            dos.close();
-            s.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            try {
+                dis.close();
+                dos.close();
+                s.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     }
     @Override
     public void run(){
